@@ -6,15 +6,14 @@ void setup() {
 }
 
 void loop() {
-  // send data only when you receive data:
   if (Serial.available() > 0) {
     // read the incoming byte:
     incomingByte = Serial.read();
-
+    // HEX to int
     dec = (int)incomingByte;
 
-    // say what you got:
     Serial.println(dec);
+    // write number to SSR via pwm 9:
     analogWrite(9, dec);
   }
 }
