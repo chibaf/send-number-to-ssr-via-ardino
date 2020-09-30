@@ -1,8 +1,10 @@
 import serial
+import sys
 import time
 val = 0
-ser =serial.Serial("/dev/tty.usbmodem14101", 9600)
 time.sleep(2)
+strPort = sys.argv[1]
+ser=serial.Serial(strPort,9600)
 while 1:
 	val = input()
 	
